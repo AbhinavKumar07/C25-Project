@@ -1,0 +1,26 @@
+
+class TrashCan {
+    constructor(x,y,width,height) {
+        
+        var modifications = {
+            isStatic:true
+        }
+
+        this.body = Bodies.rectangle(x,y,this.width,this.height,modifications);
+        this.width = width;
+        this.height = height;
+        this.image = loadImage("dustbingreen.png")
+
+        World.add(world,this.body);
+    }
+    display(){
+        var posX = this.body.position.x;
+        var posY = this.body.position.y;
+        push();
+        strokeWeight(3);
+        stroke("red");
+        translate(posX , posY);
+        image(this.image,0 , 0, this.width, this.height);
+        pop();
+    }
+}
